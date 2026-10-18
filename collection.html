@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jewellery Collection</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: skyblue;
+}
+
+/* Collection Banner */
+.collection-banner{
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+                url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1600');
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Category Buttons */
+.btn-category{
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.btn-category:hover{
+    transform: translateY(-3px);
+}
+
+/* Product Card */
+.card{
+    border: none !important;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .4s;
+    background: skyblue;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15) !important;
+}
+
+.card-img-top{
+    height: 280px;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.card:hover .card-img-top{
+    transform: scale(1.08);
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.price{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Add To Cart Button */
+.btn-cart{
+    background: skyblue;
+    color: skyblue;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.btn-cart:hover{
+    background: skyblue;
+    color:white;
+}
+
+/* Wishlist Icon */
+.wishlist{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    cursor:pointer;
+}
+
+.wishlist:hover{
+    color:red;
+}
+
+/* Footer */
+footer{
+    background:#111;
+}
+
+footer p{
+    margin:0;
+    letter-spacing:1px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .collection-banner h1{
+        font-size: 2rem;
+    }
+
+    .card-img-top{
+        height:220px;
+    }
+}
+</style>
+<body>
+<!-- Navbar -->
+ <header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-skyblue shadow-sm">
+    <div class="container">
+        <a class="navbar-brand  fw-bold text-white " href="/Jewlry.html"> Jewellers Collection</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="Jewlry.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/hom.html">Collections</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cont.html">Contact</a></li>
+            </ul>
+        </div>
+    </div> 
+</nav>
+</header><br><br>
+<!-- Collection Banner -->
+<section class="bg-skyblue text-white py-5"> 
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Expensive Collection</h1>
+        <p class="lead">Discover Premium Gold, Diamond & Bridal Jewellery</p>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="bg-skyblue text-white py-5"> 
+    <div class="container text-center">
+        <button class="btn btn-outline-light m-1">All</button>
+        <button class="btn btn-outline-light m-1">Rings</button>
+        <button class="btn btn-outline-light m-1">Necklaces</button>
+        <button class="btn btn-outline-light m-1">Earrings</button>
+        <button class="btn btn-outline-light m-1">Bridal Sets</button>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="bg-skyblue text-white py-5"> 
+    <div class="container text-center">
+        <div class="row g-4">
+
+            <!-- Product 1 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://static-01.daraz.pk/p/98c4cd527875b387a226d9cf53b95a78.jpg"
+                         class="card-img-top" alt="Ring">
+                    <div class="card-body text-white">
+                        <h5 class="card-title ">Diamond Ring</h5>
+                        <p class="text-white fw-bold">$499</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://rukmini1.flixcart.com/image/1500/1500/xif0q/jewellery-set/o/s/r/na-na-1-ad-neck-multi-112-a-rangrozo-jewellery-original-imah8fmdfkbqeha5.jpeg?q=70"
+                         class="card-img-top" alt="Necklace">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Gold Necklace</h5>
+                        <p class="text-white fw-bold">$899</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.meesho.com/images/products/485623829/yjldx_512.webp?width=512"
+                         class="card-img-top" alt="Earrings">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Luxury Earrings</h5>
+                        <p class="text-white fw-bold">$299</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://i.pinimg.com/originals/cb/e1/dc/cbe1dc688a5439ebbbe98f6d0f7a79be.png"
+                         class="card-img-top" alt="Bridal">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Bridal Set</h5>
+                        <p class="text-white fw-bold">$1299</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLTK3Oksa9a5ed87RZYaAthrrbTrLMFzYtnw&s"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Gold Bracelet</h5>
+                        <p class="text-white fw-bold">$399</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://rudradhan.com/cdn/shop/products/image_b660da4c-c784-42e3-96fc-1ded55a2f764.jpg?v=1757080913&width=1200"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Diamond Pendant</h5>
+                        <p class="text-white fw-bold">$599</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://i.pinimg.com/474x/a9/20/cf/a920cf20d56e5b90d4c80ba83b8e0e86.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://i.pinimg.com/564x/24/93/4e/24934e553d1a870f831f314785e9f4c2.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://meerzah.pk/cdn/shop/files/ns-514_2.jpg?v=1726042879&width=600"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.meesho.com/images/products/438642948/weihf_512.webp?width=512"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 11 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://cdn.bzzo.in/rafsijewels/imgdata/product/full/lowmedium/bb366eac28f142da913a92ad48a045c4.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://www.riwaaj.uk/cdn/shop/files/IMG_9492.jpg?v=1778853546&width=533"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 13 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://t4.ftcdn.net/jpg/06/48/37/73/360_F_648377395_8tt4I8sEKvLSjqe2XKQZX0zm33HjtPsm.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 14 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/a8048bcfe1864372a9c2f469f1496825~tplv-fhlh96nyum-resize-webp:800:1067.webp?dr=12190&t=555f072d&ps=933b5bde&shp=8dbd94bf&shcp=948674b7&idc=useast5&from=2378011839"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 15 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://pk-live-21.slatic.net/kf/Sb84db99249d34c5d8e6991dafa2d27886.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Wedding Ring</h5>
+                        <p class="text-white fw-bold">$699</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 16 -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://palmonas.com/cdn/shop/articles/Because_Mugs_Frames_Are_So_2015_Sq_8_4944a37b-249f-4db3-8d0f-878b98e65eb6.jpg?v=1770974405"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-white">
+                        <h5 class="card-title">Luxury Necklace Set</h5>
+                        <p class="text-white fw-bold">$1499</p>
+                        <button class="btn btn-outline-light w-100">
+                            <i class="bi bi-bag"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+    <p class="mb-0">© 2026 Luxury Jewellers. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

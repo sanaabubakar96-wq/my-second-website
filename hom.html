@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Jewellers</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:skyblue;
+    color:white;
+}
+
+
+/* Header */
+header{
+    background:skyblue;
+    color:#333;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    color:white;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+/* Hero Section */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFhUWGBcXFxcWFRcYFxcXFxUXFxcXFRcYHSggGBolHRYXITEhJSkrLi4uFx8zODMtNygtLi0BCgoKDg0OGBAQFy0dHx4tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAACBQEGB//EADgQAAEDAgQFAgUDAwQCAwAAAAEAAhEDIQQSMUEFIlFhcYGREzKhsfBCwdEGYuEUFSNSsvEzgpL/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQIDBP/EACIRAQEAAgEEAgMBAAAAAAAAAAABAhEhAyIxQRIyE1Fhcf/aAAwDAQACEQMRAD8A0GyjNRGNBuCDqJGluisKa5Y6a4wJhiEAjtCokS+Lpy0jsmYVXiyVEL4E8sZcvRvQG42CZSOBsXNgAA7epk/X2Wxg+HuqX0b1P7Ken40efFKgTYXWpguDk3qW7DX1WnhcEymLC/U6or6kLXTPaMY1ogCB2QqtZArYhI1cQjY0ZrYhKVMQl31EMuU7VoR9RCc5LYrGsYOYx23PgLCxnGXuszlHXf8Awp2qRt4rHMYOZwH39li4vjxNmN9T/CzC0kybnqVdlBLatA1qj3mXOJ86eyvSw0p6jhFoUMMnoWksNw7qtShgwNkxSpJhjE0Whsoo9PDo1OmmWMTLYLKCO2mitarhqZKMaigKQuFyCWUQ864gPLucWO2yx63P7XPqU9CBiqIcIKHgqpByO6mDM2if566LKdt16bXum/ZwNV4UC6tGbhVYmw1KIxhcYAuVt8P4eGXN3fmiBazKfB3Naakw6NNo7kX/AArR4RiZYBe2kiCQbgxtYhP1CIheZweJipUHRzgTN3OJzEkQIs5o9Apvbl/p/bF6CrWSVfEperiEq56vaZBKlVBcVVzll47iobZvM76DyVO1SHq+IDRLiAFh43jRNqdv7jr6BI16jnmXGfsPC4ykpXIEQSZJJPUojKSap0U1ToJ6GylLDpulh0zToo7WJ6K0KnRTDGqAIrGppdY1M02KlNqZphBLsajMCo1FaE0rBXCqF2Uwjig1HK7yl3uSCZ1FRRI2e5qFWw4cO94MaSITeVcLUrNql0UGIy2dbp0iNiBf1hMUagd8t/F9wNBfUgeoR8NgzUMbblbFPhlNoENEiDe8kEESN7gH0U/HKeKdyx9rcPwrWidSd0y+pCxKGM+FU+CZj9FhoA0H5RGs9NExXxSvHKWIuOqYq4heaeT/AKl/9wBFzAgQQRseWVovqrIc/wD55iJEExrAJABmQRM+qzzvMaYTitHMgYjEtYJJgJTHcRDLC7un8rEq1XPMuM/YeFWxIYxvEnPsLN+p/hJhiIymmKdFJQFOkmqdFGp0Uyymmm0JlFGZTRA1WATJUBWAVg1XaNvyyYca1GYxBOLptc1peA5/yg/q8HRPNYlLKV2q1qMwKNaitaqSjQitC41qIAgkhcKuuOTAD0ByLWIGqtQp2zHfRIwPhlRNyojRM/KjYfCl57JjD4WbnRaLWhoRINuUqYaICpWrQh18RCzK1eUWiRn/ANSSctRsy07Xsdbek+iNSrBzQ4GQRKpjRLHePyEjhMSG05dAAkDawMCRAg22WPjJtreJ+o+Fg4iuS5xbEga9NiRb5ttteyHjeIOfYWb9T5QKA1ETI00uCLjwJKWdVhFWsRmU0SnTTVKkriQqdFNU6KIymihqotqtYrgKFwkDcyYFzA1sg45z2ttAJOmrg3/sBoT2TSPC7IsJEnQbnew3SNPiIDYqNBeGhzm3M3iRMAdctyg06lIVXVhn+IHMzCOVj3NcJMWywTmgdEBsNLev4BKLhncsgiHk31kN09JBPqsb/fnuc1vI4GmXOa1jpfctikSR06HQrT4dApMaxpYA2I/6gwYd1iT7IoLcUh7mSZm5hsAQW6DTTfXda3D2n4bM2uUT/nusDGYlr3OL5IY0uOVs8rYt2kER1HgrQpcREB3w3Q4i9Po4CHkerQbWUYY83JWd4ka7nAR1NgACST2A1XaVZpJaDcbEEW6idQs7Dtc4ONRwIM5S06MEkER5APvtCT4zVDmBxIOgDtJI3mdoJ8jaE8stcpxx3dPSALqX4fVzU2mZtrMzFpnvqj5lc8Is1XZVXXsooUwE3ChzgTJjuUeorUhZQhIBZVFeFEaByYSuIxCpiMQs6rVlFokdrVZQCVCUlj8e2mL67DcqbVyLY/EhrTJXn3w5tgLG/wD2g/KD13v57odau6o7M4+BsPCJSZq2Jm4ExcWJ1jQ/wss77a4z0qxiOxsEdIIMTOoiI7x6Sr0qaviacAHvr05TfwBKMvBzyap0kZrVZjbLq1Z11oQn4tgqClmaKjhIBIFtLTqeyKDul6GIpvpuqtex7QC7KS10mIYIIMC+3TumRPiFSnRqN0diBPMS6BeYsbx7a9YWe41apN3Ek6tMfqJMdZFpRMDw81CXvv8AfWwP09gvQYZgBaB8vQaIDMw2BtJaBeYLnGHEySIPX7LRpcMGQOBcYsb9t519U9Uw0OMabLQwAa0Fp0P5KQ2wf9O2wJPQc0eyEab2h1JmUW/U+IvrDjER0v5W67BsDw7WxtOmaRe+kfcrO4vgMoJZsZ+UaW9z09VPUxvxVhlN6M4Xg+dkhzwRrBETAuDFwlRwiJyht3ZrDK7N1JGvsvQ/05xRlTDsebFzRIsi1aYmyrHwjK8sDBYb4TQxrcupAk5bySAdRr9Qs7F1c0ODSWtcLwDmcXCXEb6ELR4xXqZjSY0E7HNBgiDaLyd5GnlPcKptqUm/8YbAAMgQS2JO+YSN1G/llpX1m2LjMe9gzUKTs7iWljrDMJPKCb2vrv1WxgcaHjSHCJadp77pfF8Mc0n4TiHHSeZl3yQAflIBfA/uiVi4l73nO15aQAYbF3RuHd41G61Q9YCokOH4oljS7WBe17amLT1jdOB6EtNlCyq6knaTszGnt9RYqjgqIn8NRMZVEg8y+pKGXKjnrF4hxWeWmfLv4/lZ2tZDXEuKBnK27voPP8LBdmccziSSrUqM3TdOgp8r1oKjRTL6NpjQ9Y1trtrqi0qUJqmwGx8Is3D3oKiwEfm1lMYIYTpBBPiRP0t4RMAwiWnYmPTWO1/ui4hnK6NYJHkXH1CU5xHiu0JyNnWBPnddDZQ8G7/iHaYuLidRc2TVKmrxu5EXyFVZynwVH0GvY/K5sZHDLDZLgWuBkC9pt4R6tKWkdj9knwnB02EkBgqEuOYsa4i+pJAidwIFz2VJVw7ALJ3DsQ8RSgg2GYTAMwdwDuOhhO4NqAYZTRcltJ7K7Gooamkthm5R5Fx7a+30WfxPFlrKpc52hidIAAv/APYe5Wu+lOhg+49VgccwlR5gs5ZBMGQY0tHdTldRWMloXB2GlSp05khok94utd+AzcxcZA5YjltOhtOl7WWTRouHULXpUbzJJd3gAQ2w/LyjHQy2zsXgpZnIIN4N80xeQO4IutngOL+NRk3cxzmOtBlu8JQ1KheWzTtAaDazpBcTOggiB1CzuBVy0PcLBz3OA7CG/WEWay3+xOcdfp63NAgNmQe68zxXAQ91UCMwdJ/VpvOugEr0OAxDau8O6fusnjlTK0U75nOFhHW+u2vsVSYw8FQeyXue8g2hwbaLWj0Wth6/dY+V7XBpdLSDHKBcRuO3ZN0hBQb2HCKs0yOh+h/CjvKyuA1OYt6j6j/2VqVE4mqSoqyuoJ8rxnFjUgNkMcYb/fYm3XQqlGml6fDCCCAOVsNG2kEm3SAhtwlSmGsbIlxdUeQ295MakE6CDYey5flfbs+M9Vt0aKcp0lk4Lio5nOhtMGA8uMOjUglotbf0lblFwIkLTHKVGUscFNdDYRg1XDFaNkq8McKm1hbrp16bnSD6uuix2P2K4aB/cdig0DHKSYBaAS0tEls5ZNiRBsCbR1Cz+t/1XmFMFYZehgwbAi0RJgwBOmq3aVNZRpNc9zhUYA0wbSWmNIHUybkLZwNQPbI2MdPVHSyngdSe3DSWXxSlDX2InKCb3a4wQSLj31W+GoWMwYe0tmO62ZbYGC4expBuDdoBMgwCAC+7iLbQNLLYa9rLk5R0Ox6SlX0C1zWkxJebf3S4yT8o19wsf4AqOa57nSS4AiSwEHVoILabiB8zp0tsgPYsRAsqgS0Boe45RF4dmtveZt16yqu4/TD2suSQJj9MnKJ7k7dpTJrgK0JVmOYTEkdy0gEdnRBRaWKY6zXNJHQhIln0QdkCrSiOWQOn5dHNdoMFzQYmCRMdY6LhxDNMzfcdv5HuEaN5/jONAaWskONvlMiZO4Gn5ok8CDAaJgCB4W9jsdS0ymof7cttrklZr/iGcrWs6D5v/wBEwI8f4M/Hna98aGZiRTLdS6bBtz57DyszH4ir8bO52pizQW6SRJ8EWKmCrVWu58rpOSzswfBHNH6dIjQlWrBzrWEh7YB0AIb6zf8AZUlw1C5wvoBaI1vf0/BomWC6HQZG0JmkLpG0eG1Mr2nvfwbFehqhebphegovzMB3iD5H59U4iqqLsKJk+e06aYbTXWtRGhZ6b7Z+N4S10EDQzlPyk9xv9lnUsVUou5sznOdakC45WgmXAmcwggmSANl6UBCxGFzDodiNR4UZYe4rHP1RMHWDxIIPggj0I1T1OmvL0absO6YimP8A5Hu5iSf1i+Yi17nWwXq8FVDgnhlvipzx1zBqdNVq4Z2rHFpBDrGxI0kaH1TTGogCuzaJdPF4jCVqL/iZOXMRUGeWuY6JtAvImdQYWrga3w3ZQbOgtnU2JiOsfZehdTBEESsajwWhVquq5TmYQQWuILi0XIOgLRfQzt3w/Hccu1v+SZY9x+jXBTLVmtoBlmudA63MSTqddUxTeWmXEFptM3B2t0P0W8t9sLB6+HDvI0Kxf9ucxwzNGUPLgR8oEWkESCPVb4KsArQ84xxzCxAEwNWiToYv1tbXss2lRaKbHnUuLSYInmAmwBzQMsnS/UlerqcPbctJaTruPY/t3WU/g1RrS1r5Bdm0AIM5jB2ukbtesWmMjm6WkbGbXtpF+qz8e41HFtN2QikS4vGmbQ67AHrHum67HXkPbYAGJERBiJg6pU4gCsTDjLWidOpP3Rs5FqZaGu+Kc2QW5ZgEAWud+pRw1gbULcvywS1pgWMT19OgSor5RUGciTLZ5rQJF/UKGqMjhPzXyi/uY10QNF6WGylrgTJMgG+UEF0AgX0G8i2kpp2JkEHUk5Sy4MNEiR8ovqe4QqjnEtIFhIInqQZG2oGys3DOcSbCZ0m0kE6nsNkbPQdKoRku6Je6ADu4Fsmekd9dwr4akRrb9zMyU5SwhCZZhuyQAYJTdGijU8OmGsTK0IMWhw2pq3rceR+fRLFq62xsgmnlUS/+tPQKI2Wnh6GNY4wHNkagEGPMaJxoXncRwyowPNM5nPN3kkOAm3ywSGjQXHuUTA49zXfDAJYxsvcQS6QNA0El7jrIAA+iwmdn2dNwl+r0LWo9OmgcPxLKjQ9pkGYMEAwYMSL3Wixi1ll8MrNFMVgG1BdrSRJbmEiYIv7lZ3Da7qb3U3Fzi3mJBDhDjoQeZpFhBJ11XomtWbx3BAgVLchmIIJJtGZoJAOlh0WfUx13ReGW+2tak6RKMAsjhGJkAQQHAEBxBMHaxN/N1stWmN3Nsspq6QiywsC/4dRxaHNE/KLkRpHX957r0lISsjj1DkcRYmI1vftvBPoVl1dzunpr09Xtvtgcd/qh7XFrWhp3MA5LA5YO+951jZLcJ41WqPDXAhrrZ3OaJdtAgDVBdhGud8R9MiRzN6OdUphsEnQQSe06rSHBqDDmnNBkCbAxEiDGllzTPO82uq44YzUjVwOKcwmm9sEHv+q4B7/uCtWnVBXkX40vfE3mT9Y+5Plx6rawNXaV2dK9rj6mPLZBXCFSm5EWrJUsCFUwrTqAjqIBJ2Ab0CR4kylRYaj9NNrk7XIC21kf1NhXVaOVri0ghwhrXuJFyA1wg2B91OXEVjzWYcURc0wJEgcxJHXQDVN06rhrT+sfcLXwXDTSax5eXOyhkWAABcTcd3LLpYmXPaxr8rCc2eJzE5p10JJOmimdPOzdulZZ4+oPTxTNw5vkT/4ym6RaRykHwZWFxDD2Ls2TW88oLbEO8yIi+qzzTqw15dBPyu+V1uh39ZWV6mWF1lNtJ08cpuXT2AauhZPCsTWiKozR+oN22mNFpUa7XTlMxqNwtcepMvDLLC4+RFUqy4rS5KiiiAwauGez5mkeRb3SeLwDKrS1w1EGDFvRfQhBSmJ4RTdfLB6tt/hK47OZvnNXBOpvFQwKdNtsoMO1gVA0tlo1idd9lrcM4scrPijK5/yth0kaAgxBJ1yglw3W5X4U5unMPr7LJxPChm+IwEva1wa0uIAJ3aR8rtp1G3Q43C484tpnMuK2KTgQCLo7QvJ4LGPoFlJxL3ukucXgBo/vzRla2IDySSdYNl6XC4lrxYjuJ0/x3V45zJnlhcXn8dh/gVZu51Z+jeUg6AtYLOB5QSTY+V6DAYnMOhFiOiNiKWdpba4IuJHg9l5UNdhXMptOdzje7gGCw+WC1tMGTmJkAjYKOenf4v7z+vZMcuYuk17YOh+hWdgeKU38uZuYbZgQY1yncJ9lQEWII7GVtLMoyssZFbhLh8jgezhf3H8LNxfDq5sYA/tv9f8AC9UoQo/Fir8uTyeF4cW/pK06GGK1iwKZVcx0m5bDpNhGlchRUl0FWVV1ARcqC07iTbwuhccYB06e9vXVSbP/ANyOaNczg0AXykGDPbdGoUCXG+vYWjQAx6+qG/kcD0Ow73v3M+yBjGvrOZle5hzgSDbK6xkGxcAfoFUvOi17MvwLXMcS0tLZLSQJDoMGDY9Vm8O4rQp4Y1MRUDW/Ecwl5mT0GpPhOYfGO+E92ckNDgT+mc0AGdwL+iwsFwEwM1LOQC4STGebO5rTvIjZY58ZSyNunzjZa3MPx3CU3uYyuwHKXOpuJAyRJIkWt09lkjilB5YaFVrnuzOZE84HzNmIOlxsinBlrgDQflAOjc0u7kd7+qYwuAcYIZkAJMm0DZrWm/dRZtfEaFHEh0jcGEdYDQWutqtrDyQtsbtjlNCqLvwyoqSao1U9SckcNTT9JqpKzmSkMXgwb6Hr/K0wh1GoDzGLweYOAhjyIzR5ieuqwG4d9CoylTBDAC+o4taCZ1LXkgF5tYy0BvofaYyl7pCpTDhlcLexHgjRY5dPfMbY9TXFZ/DuOte0lwIDXZCf7gJIgXkCJiQtNxbVbyuEkWLSCQD+y8/xH+nJY2nT+RpFv1ZdSATaTubG53ukqrajawJBa1rf1TBJGVoEzAaBOsXHRZ/LKcZTa/jjecaNjsE+gaeX4hbmzVHNDed0RncYmZ2sLWCBgcU+kA1tTNzMzODH5oJIMtAObU6yeUdUTA8YrBlR2YQHcpJIGVoOcw7NHNMaWaiu4yXU2OcwAuDOaACHPdAvI6iTHosrrzLprz4s21MD/UDH5swLQ0wTfU9QQCPYrYY8EAgyDoRcFeNqNguayHXz87aZgjLLnQMs2Aga26yneHcQLH5SbOvEQ0E35DJkX+i16fWtusmXU6U8x6UrhVGVQRKtK6XO6uyqyiNpHeyArK6Gldc8N0S78QkDQCVxtQtg2y7kG47xG37rjaqIWgi90tKJOpk3ABGsyd9x1C7Up5mgTBsRlF7GYPtCM/Bt2keD9xoUHGU3ZbNaTGv7kaXtPVH9HnhlY6oxrS2SGveBliwaMxcZO5BjyU+zjDToD9v5WBjadV7hnEACPtt6I9FsCIUfK27afGSabreJyqVeIWWawEpyhhdyqQ7hmSZWnTCpQoJprFUibVIURVEyP0acIy6AuFMnMyhK4VQlABxDbLHrnKVs1SsjHNSpxynUlFsVi0MTeCn6ddJS9bh1J2rG+yVrcBpui7hBkcxMGItPkp9tRWzpXGX0JlZ7ZTuCGZFV3TbTokcRwNwc0tdIa3K0aQN/M9V6PMrMYTsp/Hj+lfky/bPwNNzQAVpUqZKMygBrdWfUVyM7XA0N8pevXVa1VIVaiYXqVkLOhFy6CpUZY5NUnJJhTVIpkbCs0IbEZqZKPw7TqAUF2AZ0TYK456NDZL/RtGyuykizKsAjQ2jQukrhKDVegls35C6lfijsog3pFyFZcJTJUtQ3tR1whAI1FmY0LXrNWXjBZKnHlsW7LUPe/umsPWS/GW3aexHt/wC0rRrQoaN+nUTFMkrNwMvMBegw1ANH7qoipSw/VMaLhcgVaiZLvqpWrXQqtVK1KiWxparVS7nKOchkpKWlXahhGphAGYmaYQabU0xqZCMRAVQBdTJ0vXAoFJQFgFC5UL0J1RBL1KiUq1F2pUSz3JHpMyiHK6g3syVUldKG5Ul0ORAUEIrEBWq1ZGObqtmoszHtsgPJ8ZbyT0I/hZGHYXGB7re4i2WPHb7XWVhXRCzrSXh6XhlIMaAPfcrSD1jYOunviqoij1HpKtVXatVI1Xo2cdq1EIuVSVWUguuKNRGtQaNamaTFWmxN02JktTYmWtXGNViUyQrkrhKG56AuXIbnodSol31EAZ9RBc9DL0NzkjXL1VUlXagJCi6ogPYOQyooqSq1MNUUQHHLPx2iiiA83i9HeD9lh0FFFm0jWwKfXVE00GolnLqiAEVFFEARiPTUUQB6abprqicKjBQ6FRRMBvQn/n0UUQC7/wA+iA78+iiiRquVFFEBAjBdUSAaiiiYf//Z');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:skyblue;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+.jumbotron{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("https://media.gettyimages.com/id/521316598/photo/dubais-gold-souk-deira.jpg?s=612x612&w=gi&k=20&c=y459sE_CwMCqYRZw6EiFwgsMv4npYeofA3EI-MGcmZs=");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.content{
+    max-width:700px;
+    padding:20px;
+}
+
+.content h1{
+    font-size:60px;
+    color:white;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:22px;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:skyblue;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    margin:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:skyblue;
+}
+
+@media(max-width:768px){
+    .content h1{
+        font-size:40px;
+    }
+
+    .content p{
+        font-size:18px;
+    }
+}
+
+/* About */
+.section{
+    background-color: skyblue;
+    padding:80px 8%;
+}
+
+.section-title{
+    background-color: skyblue;
+    text-align:center;
+    font-size:40px;
+    margin-bottom:20px;
+    color:skyblue;
+}
+
+.section-text{
+    background-color: skyblue;
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Collection Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+    text-align:center;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+/* Why Choose Us */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.feature{
+    background:skyblue;
+    padding:25px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* Contact */
+.contact{
+    background:skyblue;
+    color:white;
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* Footer */
+footer{
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .hero-content h1{
+        font-size:40px;
+    }
+
+    nav{
+        display:none;
+    }
+}
+    </style>
+
+<!-- Navbar -->
+<header>
+    <div class="logo">Home Jewellers</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-skyblue shadow-sm">
+    <div class="container">
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="Jewlry.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="collection.html">Collections</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cont.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header><br><br>
+
+<section class="jumbotron">
+    <div class="content">
+        <h1>Luxury Jewellery Collection</h1>
+
+        <p>
+            Discover timeless elegance with our exclusive gold,
+            diamond and bridal jewellery collections.
+        </p>
+
+        <a href="#" class="btn">Shop Now</a>
+        <a href="#" class="btn">View Collection</a>
+    </div>
+</section><br><br>
+
+<!-- Hero Section -->
+<section class="position-relative">
+    <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=1920"
+         class="w-100"
+         style="height:90vh; object-fit:cover;"
+         alt="Jewellery Banner">
+
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-3 fw-bold">Luxury Jewellery Collection</h1>
+        <p class="lead mb-4">Timeless Elegance Crafted For Every Occasion</p>
+
+        <a href="#" class="btn btn-warning btn-lg me-2">Shop Now</a>
+        <a href="#" class="btn btn-outline-light btn-lg">View Collection</a>
+    </div>
+</section>
+
+<!-- Featured Collections -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Featured Collections</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="https://www.weshop.ai/blog/wp-content/uploads/2025/09/Timeless-Jewelry-Hero-1024x640-1.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Diamond Rings</h5>
+                        <p class="card-text">Elegant engagement and wedding rings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=800"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Gold Necklaces</h5>
+                        <p class="card-text">Premium gold designs for every occasion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <img src="https://i.pinimg.com/736x/d6/0d/9f/d60d9f62347fce0e66938539457c7375.jpg"
+                         class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Bridal Sets</h5>
+                        <p class="card-text">Exclusive bridal jewellery collection.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Best Sellers -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Best Sellers</h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card text-center shadow border-0">
+                    <img src="https://static.toiimg.com/thumb/msid-123560770,width-1280,height-720,resizemode-4/123560770.jpg" alt="">
+                    <div class="card-body">
+                        <h5>Diamond Ring</h5>
+                        <p class="text-dark fw-bold">$499</p>
+                        <button class="btn btn-outline-light">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-center shadow border-0">
+                    <img src="https://media.istockphoto.com/id/1427466115/photo/beauty-model-in-wedding-jewelry-set-elegant-woman-in-necklace-with-earring-and-ring-beautiful.jpg?s=612x612&w=0&k=20&c=AT9DfkZvRbxKkuqjCEGjF9P3D3dOKZvRh2J5hw8mjt0=" alt="">
+                    <div class="card-body">
+                        <h5>Diamond Necklace</h5>
+                        <p class="text-dark fw-bold">$799</p>
+                        <button class="btn btn-outline-light">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-center shadow border-0">
+                    <img src="https://www.pakstyle.pk/cdn/shop/files/p16115-elegant-jewelry_1.jpg?v=1771238108" alt="">
+                    <div class="card-body">
+                        <h5>Luxury Earrings</h5>
+                        <p class="text-dark fw-bold">$299</p>
+                        <button class="btn btn-outline-light">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card text-center shadow border-0">
+                    <img src="https://tiimg.tistatic.com/fp/1/008/783/artificial-fashion-necklace-set-676.jpg" alt="">
+                    <div class="card-body">
+                        <h5>Bridal Set</h5>
+                        <p class="text-dark fw-bold">$999</p>
+                        <button class="btn btn-outline-light">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-skyblue text-white py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold">Discover Luxury Like Never Before</h2>
+        <p class="lead">Explore our exclusive jewellery collection today.</p>
+        <a href="#" class="btn btn-outline-light btn-lg">Browse Collection</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-4">
+    <div class="container text-center">
+        <h5 class="text-white">Luxury Jewellers</h5>
+        <p class="mb-0">© 2026 All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
